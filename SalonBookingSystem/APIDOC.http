@@ -1,0 +1,71 @@
+
+###
+GET http://127.0.0.1:8000/api/staff/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/api/staff/
+Content-Type: application/json
+
+{
+    "staff_name": "Divya Nair",
+    "specialization": "Spa and Body Massage",
+    "experience": 4,
+    "phone": "9876543218"
+}
+
+###
+GET http://127.0.0.1:8000/api/staff/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/api/staff/1/
+Content-Type: application/json
+
+{
+    "staff_name": "Anjali Menon",
+    "specialization": "Hair Styling and Makeup",
+    "experience": 6,
+    "phone": "9876543212"
+}
+
+###
+DELETE http://127.0.0.1:8000/api/staff/7/
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/api/appoinments/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/api/appoinments/
+Content-Type: application/json
+
+{
+    "staff": 1,
+    "customer_name": "Anjali Thomas",
+    "service_name": "Haircut and Styling",
+    "appointment_date": "2026-11-05",
+    "amount": "750.00"
+}
+
+###
+GET http://127.0.0.1:8000/api/appoinments/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/api/appoinments/1/
+Content-Type: application/json
+
+{
+    "staff": 1,
+    "customer_name": "Anjali Thomas",
+    "service_name": "Haircut and Hair Spa",
+    "appointment_date": "2026-11-05",
+    "amount": "1200.00",
+    "status": "confirmed"
+}
+
+###
+DELETE http://127.0.0.1:8000/api/appoinments/1/
+Accept: application/json
