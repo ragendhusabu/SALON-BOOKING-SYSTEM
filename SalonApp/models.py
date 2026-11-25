@@ -15,4 +15,12 @@ class AppoinmentDb(models.Model):
     appointment_date = models.DateField() 
     appointment_time =  models.TimeField(editable=False, null=True) 
     amount =models.DecimalField(max_digits=10, decimal_places=2)
-    status = models.CharField(max_length=200, default="pending..")
+    status = models.CharField(max_length=20,
+    choices=[
+        ("pending", "Pending"),
+        ("confirmed", "Confirmed"),
+        ("completed", "Completed"),
+        ("cancelled", "Cancelled")
+    ],
+    default="pending"
+)

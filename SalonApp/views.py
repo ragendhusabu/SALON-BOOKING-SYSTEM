@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from SalonApp.models import StaffDb,AppoinmentDb
 from SalonApp.serializers import Staff_Serializer,Appoinment_Serializer
 from datetime import time,timedelta,datetime
+from rest_framework import status
 
 # Create your views here.
 
@@ -19,7 +20,8 @@ class StaffListCreateView(APIView):
         serializer_instance = Staff_Serializer(data = form_data)
         if serializer_instance.is_valid():
             serializer_instance.save()
-            return Response(data = serializer_instance.data)
+            return Response(data=serializer_instance.data,status=status.HTTP_201_CREATED
+)
         else:
             return Response(data= serializer_instance.errors)
 
